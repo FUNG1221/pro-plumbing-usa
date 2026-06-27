@@ -829,12 +829,8 @@
     .faq-answer {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.3s ease;
+      transition: max-height 0.35s ease;
     }
-
-    .faq-item.active .faq-answer {
-    max-height: 200px;
-}
 
     .faq-answer p {
       padding: 0 24px 24px;
@@ -842,11 +838,11 @@
       line-height: 1.7;
     }
 
-    .faq-item.active .faq-answer {
+    .faq-item.open .faq-answer {
       max-height: 220px;
     }
 
-    .faq-item.active .faq-question i {
+    .faq-item.open .faq-question i {
       transform: rotate(45deg);
     }
 
@@ -1751,23 +1747,17 @@
           </div>
 
           <a 
-  href="https://www.google.com/maps/search/?api=1&query=2450+Commerce+Street,+Dallas,+TX+75226,+USA" 
-  target="_blank" 
-  rel="noopener noreferrer"
-  class="map-placeholder"
->
-  <div>
-    <i class="fa-solid fa-map-location-dot"></i>
-    <h3>Google Maps Placeholder</h3>
-    <p>Dallas, Texas Service Area</p>
-  </div>
-</a>
+            href="https://www.google.com/maps/search/?api=1&query=2450+Commerce+Street,+Dallas,+TX+75226,+USA" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="map-placeholder"
+          >
             <div>
               <i class="fa-solid fa-map-location-dot"></i>
-              <h3>Google Maps Placeholder</h3>
-              <p>Dallas, Texas Service Area</p>
+              <h3>View Us on Google Maps</h3>
+              <p>2450 Commerce Street, Dallas, TX 75226</p>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </div>
@@ -1940,11 +1930,11 @@
       question.addEventListener("click", () => {
         faqItems.forEach(otherItem => {
           if (otherItem !== item) {
-            otherItem.classList.remove("active");
+            otherItem.classList.remove("open");
           }
         });
 
-        item.classList.toggle("active");
+        item.classList.toggle("open");
       });
     });
 
