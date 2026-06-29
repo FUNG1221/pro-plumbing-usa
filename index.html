@@ -870,6 +870,38 @@
       grid-column: 1 / -1;
     }
 
+    .privacy-consent {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,0.88);
+      font-size: 14px;
+      line-height: 1.5;
+      padding: 2px 0 0;
+    }
+
+    .privacy-consent input {
+      width: 16px !important;
+      height: 16px;
+      padding: 0 !important;
+      margin: 0;
+      flex: 0 0 16px;
+      accent-color: var(--orange);
+      cursor: pointer;
+    }
+
+    .privacy-consent span {
+      display: inline;
+    }
+
+    .privacy-consent a {
+      color: var(--white);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 700;
+    }
+
     .contact-form input,
     .contact-form select,
     .contact-form textarea {
@@ -1668,7 +1700,11 @@
 <div class="form-group full">
 <textarea placeholder="Message"></textarea>
 </div>
-<div class="form-group full"><label style="display:flex;align-items:flex-start;gap:10px;color:#fff;font-size:14px;line-height:1.6;cursor:pointer;"><input required="required" style="margin-top:4px;accent-color:#ff7a1a;" type="checkbox"/> I agree to the <a href="#" style="color:#fff;text-decoration:underline;">Privacy Policy</a> as outlined on the website.</label></div><div class="form-group full">
+<label class="privacy-consent">
+<input required="required" type="checkbox"/>
+<span>I agree to the <a href="#">Privacy Policy</a> as outlined on the website.</span>
+</label>
+<div class="form-group full">
 <button class="btn btn-orange" style="width:100%;" type="submit">
 <i class="fa-solid fa-calendar-check"></i>
                 Send Service Request
