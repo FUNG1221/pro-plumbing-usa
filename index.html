@@ -1910,6 +1910,21 @@
   }
 }
 
+
+/* Hide sticky CTA buttons on top of homepage, show after scrolling */
+.sticky-actions{
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(25px);
+  transition:opacity .3s ease, transform .3s ease, visibility .3s ease;
+}
+
+.sticky-actions.show-sticky{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+
 </style>
 </head>
 <body>
@@ -2633,6 +2648,20 @@
 
       updateSlider(range.value);
     });
+
+
+    const stickyActions = document.querySelector(".sticky-actions");
+
+    const toggleStickyActions = () => {
+      if (window.scrollY > 650) {
+        stickyActions.classList.add("show-sticky");
+      } else {
+        stickyActions.classList.remove("show-sticky");
+      }
+    };
+
+    window.addEventListener("scroll", toggleStickyActions);
+    window.addEventListener("load", toggleStickyActions);
 
     const backTop = document.getElementById("backTop");
 
